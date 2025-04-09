@@ -1,10 +1,17 @@
-"use client"
+"use client";
 import { styled } from "@stitches/react";
 import { ThemeProvider } from "../contexts/themeContexts";
 import { globalStyles } from "../styles/global";
+import { Inter } from "next/font/google";
+
+export const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const Container = styled("div", {
-  maxWidth: "$container", 
+  maxWidth: "$container",
   margin: "0 auto",
   padding: "0 1rem",
 

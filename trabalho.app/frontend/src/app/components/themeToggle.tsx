@@ -1,6 +1,6 @@
-"use client"
+"use client";
 import { useTheme } from "../contexts/themeContexts";
-import { styled } from "@stitches/react";
+import { styled } from "@/app/styles/theme";
 
 const ToggleButton = styled("button", {
   width: "50px",
@@ -30,5 +30,3 @@ export default function ThemeToggle() {
     </ToggleButton>
   );
 }
-
-

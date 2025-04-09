@@ -1,8 +1,8 @@
 "use client";
 
-import { styled } from "../styles/theme";
+import { styled } from "@/app/styles/theme";
 import { PrimaryButton } from "@/app/components/ui/Button/PrimaryButton";
-import ThemeToggle from "@/app/components/themeToggle";
+import ThemeToggle from "@/app/components/ThemeToggle";
 
 const HeroSection = styled("section", {
   display: "flex",
