@@ -33,7 +33,7 @@ const Content = styled("div", {
 });
 
 const Title = styled("h1", {
-  fontSize: "3.8rem",
+  fontSize: "$headline1",
   fontWeight: 600,
   lineHeight: "1.2",
   marginBottom: "1rem",

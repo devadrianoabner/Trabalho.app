@@ -1,5 +1,4 @@
-import { styled } from "@stitches/react";
-
+import { styled } from "@/app/styles/theme";
 export const SecundaryButton = styled("button", {
   all: "unset",
   borderRadius: "8px",
@@ -20,7 +19,7 @@ export const SecundaryButton = styled("button", {
   gap: "8px",
 
   "&:hover": {
-    backgroundColor: "$primaryLight", // cor de hover opcional 
+    backgroundColor: "$primaryLight", // cor de hover opcional
   },
 
   "&:focus": {

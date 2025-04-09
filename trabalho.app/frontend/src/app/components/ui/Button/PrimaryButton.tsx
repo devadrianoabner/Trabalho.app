@@ -1,5 +1,4 @@
-import { styled } from "@stitches/react";
-
+import { styled } from "@/app/styles/theme";
 export const PrimaryButton = styled("button", {
   all: "unset",
   borderRadius: "8px",
