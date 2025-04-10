@@ -1,43 +1,23 @@
-import { useState } from "react";
-import { styled } from "@/app/styles/theme";
 import { Container } from "@/app/components/ui/Container/Container";
+import { styled } from "@/app/styles/theme";
 
-const videos = [
-  {
-    url: "https://www.youtube.com/embed/iaPJfcnln0s",
-    nome: "Jéssica Almeida",
-    arroba: "@jessica.ofc",
-    status: "Aberta para projetos",
-  },
-  {
-    url: "https://www.youtube.com/embed/AeV6ULvB9lE",
-    nome: "Lucas Hssrs",
-    arroba: "@lucas_hssrs",
-    status: "Aberto para oportunidades",
-  },
-  {
-    url: "https://www.youtube.com/embed/sCy7-WtLCCA",
-    nome: "Patrocinado App",
-    arroba: "@trabalho.app",
-    status: "Transformando vidas",
-  },
-];
-
-const CarouselWrapper = styled("div", {
+const TestimonialsSection = styled("section", {
+  backgroundColor: "$background",
+  padding: "$sectionMobile 0",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   textAlign: "center",
-  padding: "$xl 0",
 });
 
-const VideoBox = styled("div", {
+const VideoWrapper = styled("div", {
   width: "100%",
   maxWidth: "720px",
   aspectRatio: "16/9",
-  borderRadius: "$md",
+  borderRadius: "$lg",
   overflow: "hidden",
-  marginBottom: "$md",
+  boxShadow: "$md",
+  marginBottom: "$lg",
 
   iframe: {
     width: "100%",
@@ -46,79 +26,44 @@ const VideoBox = styled("div", {
   },
 });
 
-const ProfileInfo = styled("div", {
-  color: "$text",
-  marginBottom: "$md",
+const TestimonialText = styled("div", {
+  maxWidth: "600px",
+  margin: "0 auto",
 
   h3: {
-    fontSize: "$lg",
-    fontWeight: "bold",
+    fontSize: "$headline3",
+    color: "$text",
+    fontWeight: 600,
+    marginBottom: "$sm",
   },
 
   p: {
-    fontSize: "$sm",
-    color: "$muted",
+    fontSize: "$body2",
+    color: "$text",
   },
 });
 
-const Arrows = styled("div", {
-  display: "flex",
-  gap: "$md",
-
-  button: {
-    background: "none",
-    border: "none",
-    fontSize: "2rem",
-    cursor: "pointer",
-    color: "$text",
-    transition: "transform 0.2s ease",
-
-    '&:hover': {
-      transform: "scale(1.2)",
-    }
-  }
-});
-
-export function TestimonialsCarousel() {
-  const [current, setCurrent] = useState(0);
-
-  const handlePrev = () => {
-    setCurrent((prev) => (prev === 0 ? videos.length - 1 : prev - 1));
-  };
-
-  const handleNext = () => {
-    setCurrent((prev) => (prev === videos.length - 1 ? 0 : prev + 1));
-  };
-
-  const { url, nome, arroba, status } = videos[current];
-
+export function Testimonials() {
   return (
-    <Container>
-      <CarouselWrapper>
-        <VideoBox>
+    <TestimonialsSection>
+      <Container>
+        <VideoWrapper>
           <iframe
-            src={url}
-            title={`Depoimento de ${nome}`}
+            src="https://www.youtube.com/embed/sCy7-WtLCCA"
+            title="Depoimento - Trabalho.app"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
-        </VideoBox>
+        </VideoWrapper>
 
-        <ProfileInfo>
-          <h3>{nome}</h3>
-          <p>{arroba}</p>
-          <p>{status}</p>
-        </ProfileInfo>
-
-        <Arrows>
-          <button onClick={handlePrev} aria-label="Anterior">
-            ⬅
-          </button>
-          <button onClick={handleNext} aria-label="Próximo">
-            ➡
-          </button>
-        </Arrows>
-      </CarouselWrapper>
-    </Container>
+        <TestimonialText>
+          <h3>A gente acredita que todo mundo merece uma chance justa.</h3>
+          <p>
+            Cada depoimento representa mais do que palavras — representa
+            transformação. Ouça histórias de quem já faz parte do Trabalho.app.
+          </p>
+        </TestimonialText>
+      </Container>
+    </TestimonialsSection>
   );
 }
